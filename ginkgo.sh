@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Removals
-rm -rf .repo/local_manifests
-
-# Sync the repositories
-/opt/crave/resync.sh
-
 git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b PixelOS device/xiaomi/ginkgo
 
 git clone https://github.com/Miracleprjkt/Vendor_Xiaomi_Ginkgo -b fourteen vendor/xiaomi/ginkgo
@@ -22,6 +16,6 @@ export BUILD_HOSTNAME=crave
 
 lunch aosp_ginkgo-ap2a-userdebug
 
-mka bacon -j(nproc --all)
+mka bacon -j6
 
 -----------------------------------------------------------------------------------------------------------------------------
