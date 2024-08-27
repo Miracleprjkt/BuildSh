@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b PixelOS device/xiaomi/ginkgo
+git clone https://github.com/Miracleprjkt/device_ginkgo -b PixelOS device/xiaomi/ginkgo
 
 git clone https://github.com/Miracleprjkt/Vendor_Xiaomi_Ginkgo -b fourteen vendor/xiaomi/ginkgo
 
