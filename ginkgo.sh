@@ -1,8 +1,10 @@
 #!/bin/bash
 
-git clone https://github.com/Miracleprjkt/device_ginkgo -b pixel-crave device/xiaomi/ginkgo
+git clone https://github.com/Miracleprjkt/device_ginkgo -b PixelOs device/xiaomi/ginkgo
 
 git clone https://github.com/Miracleprjkt/Vendor_Xiaomi_Ginkgo -b fourteen vendor/xiaomi/ginkgo
+
+git clone https://github.com/Miracleprjkt/android_vendor_xiaomi_miuicamera vendor/xiaomi/miuicamera
 
 git clone https://github.com/LineageOS/android_hardware_qcom-caf_common -b lineage-21.0 hardware/qcom-caf/common
 
