@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/Miracleprjkt/device_ginkgo -b TenX-OS device/xiaomi/ginkgo
+git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b Halcyon device/xiaomi/ginkgo
 
 git clone https://github.com/Miracleprjkt/Vendor_Xiaomi_Ginkgo -b fourteen vendor/xiaomi/ginkgo
 
@@ -20,6 +20,8 @@ export BUILD_HOSTNAME=crave
 ---------------------------------------------------------------------------------------------------------------------------
 . build/envsetup.sh
 
-brunch ginkgo
+lunch halcyon_ginkgo-ap2a-userdebug
+
+make carthage -j$(nproc --all)
 
 -----------------------------------------------------------------------------------------------------------------------------
