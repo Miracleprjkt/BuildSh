@@ -1,5 +1,7 @@
 #!/bin/bash
-rm -rf .repo/local_manifests/
+rm -rf .repo/local_manifests
+rm -rf device/infinix
+rm -rf vendor/infinix
 repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs
 /opt/crave/resync.sh
 
