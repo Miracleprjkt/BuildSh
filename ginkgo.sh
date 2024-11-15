@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b VoltageOS_14 device/xiaomi/ginkgo
+git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b fourteen device/xiaomi/ginkgo
 
 git clone https://github.com/Miracleprjkt/Vendor_Xiaomi_Ginkgo -b fourteen vendor/xiaomi/ginkgo
 
