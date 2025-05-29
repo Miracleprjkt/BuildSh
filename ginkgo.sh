@@ -1,8 +1,17 @@
 #!/bin/bash
 
-git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b fourteen device/xiaomi/ginkgo
+rm -rf .repo/local_manifests/
+rm -rf device/xiaomi
+rm -rf kernel/xiaomi
+rm -rf vendor/xiaomi
 
-git clone https://github.com/Miracleprjkt/Vendor_Xiaomi_Ginkgo -b fourteen vendor/xiaomi/ginkgo
+repo init --depth=1 --no-repo-verify -u https://github.com/Los-Ext/manifest.git -b 15 --git-lfs -g default,-mips,-darwin,-notdefault
+
+/opt/crave/resync.sh
+
+git clone https://github.com/Miracleprjkt/device_xiaomi_ginkgo -b LinegExt-22.2 device/xiaomi/ginkgo
+
+git clone https://github.com/kutemeikito/vendor_xiaomi_ginkgo -b fourteen vendor/xiaomi/ginkgo
 
 git clone https://github.com/Miracleprjkt/Signing_Keys vendor/lineage-priv/keys
 
@@ -18,6 +27,8 @@ rm -rf hardware/qcom-caf/sm8150/display
 
 git clone https://github.com/crdroidandroid/android_hardware_qcom_display -b 14.0-caf-sm8150 hardware/qcom-caf/sm8150/display
 
-source build/envsetup.sh
+. build/envsetup.sh
 
-brunch ginkgo
+lunch lineage_ginkgo-userdebug
+
+mka bacon
