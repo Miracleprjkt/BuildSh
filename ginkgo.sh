@@ -19,6 +19,8 @@ git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_ginkgo vendor
 
 git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_sm6125-common vendor/xiaomi/sm6125-common
 
+rm -rf vendor/voltage-priv
+
 . build/envsetup.sh
  
 brunch ginkgo
