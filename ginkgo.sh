@@ -57,12 +57,6 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 # Build the ROM
-make installclean
-if [ $? -ne 0 ]; then
-    echo "Installclean failed. Exiting."
-    exit 1
-fi
-
 brunch ginkgo
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."
