@@ -28,7 +28,6 @@ git clone https://github.com/Miracleprjkt/android_device_xiaomi_sm6125-common de
 git clone https://github.com/LineageOS/android_kernel_xiaomi_sm6125 kernel/xiaomi/sm6125
 git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_ginkgo vendor/xiaomi/ginkgo
 git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_sm6125-common vendor/xiaomi/sm6125-common
-rm -rf vendor/voltage-priv
 if [ $? -ne 0 ]; then
     echo "Failed to clone tree source. Exiting."
     exit 1
@@ -46,6 +45,13 @@ if [ $? -ne 0 ]; then
 fi
 echo "============================"
 echo "Crave sync success"
+echo "============================"
+echo ""
+
+# Drop Priv-Keys Voltage
+rm -rf vendor/voltage-priv
+echo "============================"
+echo "Remove The Keys success"
 echo "============================"
 echo ""
 
