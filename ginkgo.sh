@@ -22,12 +22,12 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/Miracleprjkt/vendor_voltage vendor/voltage
-git clone https://github.com/Miracleprjkt/android_device_xiaomi_ginkgo device/xiaomi/ginkgo
-git clone https://github.com/Miracleprjkt/android_device_xiaomi_sm6125-common device/xiaomi/sm6125-common
-git clone https://github.com/LineageOS/android_kernel_xiaomi_sm6125 kernel/xiaomi/sm6125
-git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_ginkgo vendor/xiaomi/ginkgo
-git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_sm6125-common vendor/xiaomi/sm6125-common
+git clone https://github.com/Miracleprjkt/vendor_voltage vendor/voltage --depth=1
+git clone https://github.com/Miracleprjkt/android_device_xiaomi_ginkgo device/xiaomi/ginkgo --depth=1
+git clone https://github.com/Miracleprjkt/android_device_xiaomi_sm6125-common device/xiaomi/sm6125-common --depth=1
+git clone https://github.com/LineageOS/android_kernel_xiaomi_sm6125 kernel/xiaomi/sm6125 --depth=1
+git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_ginkgo vendor/xiaomi/ginkgo --depth=1
+git clone https://github.com/Skyblueborb/proprietary_vendor_xiaomi_sm6125-common vendor/xiaomi/sm6125-common --depth=1
 if [ $? -ne 0 ]; then
     echo "Failed to clone tree source. Exiting."
     exit 1
