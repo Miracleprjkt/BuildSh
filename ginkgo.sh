@@ -50,6 +50,7 @@ echo ""
 . build/envsetup.sh
 export BUILD_USERNAME=F4T3
 export BUILD_HOSTNAME=Miracleprjkt
+export DERPFEST_BUILD_TYPE=Community
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
