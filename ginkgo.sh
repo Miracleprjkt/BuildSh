@@ -11,7 +11,7 @@ echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/VoltageOS/manifest.git -b 15-qpr2 --git-lfs
+repo init -u https://github.com/DerpFest-LOS/android_manifest.git -b 15.2 --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -56,16 +56,22 @@ echo "============================"
 echo ""
 
 # Build environment setup
-source build/envsetup.sh
+. build/envsetup.sh
 export BUILD_USERNAME=F4T3
 export BUILD_HOSTNAME=Miracleprjkt
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 # Build the ROM
-brunch ginkgo
+lunch lineage_ginkgo-bp1a-userdebug
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."
+    exit 1
+fi
+
+mka derp
+if [ $? -ne 0 ]; then
+    echo "Installclean failed. Exiting."
     exit 1
 fi
 
@@ -75,7 +81,7 @@ echo "============================"
 
 # Upload ROM zip file to PixelDrain
 ROM_DIR="out/target/product/ginkgo/"
-ROM_NAME=$(ls $ROM_DIR | grep "voltage-4.5-EOL-ginkgo-.*-UNOFFICIAL-ginkgo.zip$" | tail -n 1)
+ROM_NAME=$(ls $ROM_DIR | grep "*.zip$" | tail -n 1)
 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
