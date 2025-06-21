@@ -6,7 +6,6 @@ rm -rf .repo/local_manifests/
 rm -rf device/xiaomi
 rm -rf kernel/xiaomi
 rm -rf vendor/xiaomi
-rm -rf vendor/voltage
 echo "Cleanup completed."
 echo ""
 
@@ -22,7 +21,6 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/Miracleprjkt/vendor_voltage vendor/voltage --depth=1
 git clone https://github.com/Miracleprjkt/android_device_xiaomi_ginkgo device/xiaomi/ginkgo --depth=1
 git clone https://github.com/Miracleprjkt/android_device_xiaomi_sm6125-common device/xiaomi/sm6125-common --depth=1
 git clone https://github.com/LineageOS/android_kernel_xiaomi_sm6125 kernel/xiaomi/sm6125 --depth=1
@@ -45,13 +43,6 @@ if [ $? -ne 0 ]; then
 fi
 echo "============================"
 echo "Crave sync success"
-echo "============================"
-echo ""
-
-# Drop Priv-Keys Voltage
-rm -rf vendor/voltage-priv
-echo "============================"
-echo "Remove The Keys success"
 echo "============================"
 echo ""
 
