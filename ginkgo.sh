@@ -1,25 +1,5 @@
 #!/bin/bash
 
-# Automatic cleanup
-echo "Performing cleanup..."
-rm -rf .repo/local_manifests/
-rm -rf device/xiaomi
-rm -rf kernel/xiaomi
-rm -rf vendor/xiaomi
-echo "Cleanup completed."
-echo ""
-
-# Initialize the ROM source repository
-repo init -u https://github.com/DerpFest-LOS/android_manifest.git -b 15.2 --git-lfs
-if [ $? -ne 0 ]; then
-    echo "Repo initialization failed. Exiting."
-    exit 1
-fi
-echo "================="
-echo "Repo init success"
-echo "================="
-echo ""
-
 # Clone local manifests
 git clone https://github.com/Miracleprjkt/android_device_xiaomi_ginkgo device/xiaomi/ginkgo --depth=1
 git clone https://github.com/Miracleprjkt/android_device_xiaomi_sm6125-common device/xiaomi/sm6125-common --depth=1
@@ -32,17 +12,6 @@ if [ $? -ne 0 ]; then
 fi
 echo "============================"
 echo "Tree Source clone success"
-echo "============================"
-echo ""
-
-# Sync the repositories using the Crave sync script
-/opt/crave/resync.sh
-if [ $? -ne 0 ]; then
-    echo "Crave sync failed. Exiting."
-    exit 1
-fi
-echo "============================"
-echo "Crave sync success"
 echo "============================"
 echo ""
 
